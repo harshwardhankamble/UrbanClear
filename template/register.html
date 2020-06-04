@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v2 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{%static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css'%}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{%static 'css1/style.css'%}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('{%static 'images/bg-registration-form-2.jpg'%}');">
+			<div class="inner">
+				<form action="register" method="post">
+					{%  csrf_token %}
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">First Name</label>
+							<input type="text" class="form-control" name="firstname">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Last Name</label>
+							<input type="text" class="form-control" name="lastname">
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<label for="">Username</label>
+						<input type="text" class="form-control" name="username">
+					</div>
+					<div class="form-wrapper">
+						<label for="">Email</label>
+						<input type="email" class="form-control" name="email">
+					</div>
+					<div class="form-wrapper">
+						<label for="">Password</label>
+						<input type="password" class="form-control"  name="password1">
+					</div>
+					<div class="form-wrapper">
+						<label for="">Confirm Password</label>
+						<input type="password" class="form-control"  name="password2">
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> I caccept the Terms of Use & Privacy Policy.
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<button type="submit">Submit</button>
+					
+				</form>
+				<button><a href="login" style="text-align: center;text-decoration: none;color: white;">Login</a></button>
+				<div>
+					<ul>
+					{% for message in messages%}
+						<li style="list-style: none;">{{message}}</li>
+					{% endfor %}
+					</ul>
+			
+				</div>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

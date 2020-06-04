@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Wing</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{%static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css'%}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{%static 'css1/style.css'%}">
+	</head>
+
+</head>
+<body>
+	
+	<div class="wrapper" style="background-image: url('{%static 'images/bg-registration-form-2.jpg'%}');">
+			<div class="inner">
+				<form action="login" method="post">
+					{%  csrf_token %}
+					<h3>Login Form</h3>
+					
+					<div class="form-wrapper">
+						<label for="">Username</label>
+						<input type="text" class="form-control" name="username">
+					</div>
+	
+					<div class="form-wrapper">
+						<label for="">Password</label>
+						<input type="password" class="form-control"  name="password">
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Remember
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<button type="submit">Submit</button>
+					
+				</form>
+				<button><a href="register" style="text-align: center;text-decoration: none;color: white;">Register</a></button>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
